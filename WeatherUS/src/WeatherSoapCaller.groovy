@@ -17,7 +17,7 @@ class WeatherSoapCaller {
 	//call CityWeather form soap
 	def getCityWeather(zip){
 		def client = new SOAPClient('http://wsf.cdyne.com/WeatherWS/Weather.asmx')
-		def response = client.send('http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP'){
+		def response = client.send(SOAPAction: 'http://ws.cdyne.com/WeatherWS/GetCityWeatherByZIP'){
 			body{
 				GetCityWeatherByZIP(xmlns:'http://ws.cdyne.com/WeatherWS/'){ZIP(zip)}
 			}
@@ -27,15 +27,15 @@ class WeatherSoapCaller {
 	}
 	
 	//call WeatherInformation form soap
-	def getWeatherInformation(zip){
+	def getWeatherInformation(){
 		def client = new SOAPClient('http://wsf.cdyne.com/WeatherWS/Weather.asmx')
 		def response = client.send(SOAPAction:'http://ws.cdyne.com/WeatherWS/GetWeatherInformation'){
 			body{
-				GetWeatherInformation(xmlns:'http://ws.cdyne.com/WeatherWS/'){ZIP(zip)}
+				GetWeatherInformation(xmlns:'http://ws.cdyne.com/WeatherWS/')
 			}
 		}
 		
-		response.GetWeatherInformationResponse.GetWeatherInformationResult
+		 response.GetWeatherInformationResponse.GetWeatherInformationResult
 	
 	}
 	

@@ -36,20 +36,20 @@ class WeatherUtil extends WeatherSoapCaller {
 		 def cityweather = this.getCityWeather(zip)
 		 new CityWeatherValues
 		 (
-			success:cityWeather.Success,
-			responseText:cityWeather.ResponseText,
-			state:cityWeather.State,
-			city:cityWeather.City,
-			weatherStationCity:cityWeather.WeatherStationCity,
-			weatherId:cityWeather.WeatherID,
-			description:cityWeather.Description,
-			temperature:cityWeather.Temperature,
-			relativeHumidity:cityWeather.RelativeHumidity,
-			wind:cityWeather.Wind,
-			pressure:cityWeather.Pressure,
-			visibility:cityWeather.Visibility,
-			windChill:cityWeather.WindChill,
-			remarks:cityWeather.Remarks
+			success:cityweather.Success,
+			responseText:cityweather.ResponseText,
+			state:cityweather.State,
+			city:cityweather.City,
+			weatherStationCity:cityweather.WeatherStationCity,
+			weatherId:cityweather.WeatherID,
+			description:cityweather.Description,
+			temperature:cityweather.Temperature,
+			relativeHumidity:cityweather.RelativeHumidity,
+			wind:cityweather.Wind,
+			pressure:cityweather.Pressure,
+			visibility:cityweather.Visibility,
+			windChill:cityweather.WindChill,
+			remarks:cityweather.Remarks
 			 
 			 
 			 
@@ -59,11 +59,11 @@ class WeatherUtil extends WeatherSoapCaller {
 	
 	def WeatherInformation()
 	{
-		def weatherinformation = this.getWeatherInformation()
+		def weatherinformation = this.getWeatherInformation().WeatherDescription
 		new WeatherInformationValues
 		(
-			weatherId:WeatherDescription.WeatherID,
-			description:WeatherDescription.Description
+			weatherId:weatherinformation.WeatherID,
+			description:weatherinformation.Description
 			
 			
 		)

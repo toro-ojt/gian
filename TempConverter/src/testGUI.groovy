@@ -15,12 +15,12 @@ def address = new Address(street: 'Evergreen Teace', number: '742', city: 'Sprin
 def swingBuilder = new SwingBuilder()
 swingBuilder.edt {  // edt method makes sure UI is build on Event Dispatch Thread.
 	lookAndFeel 'nimbus'  // Simple change in look and feel.
-	frame(title: 'Address', size: [350, 230],
+	frame(title: 'Address', size: [500, 550],
 			show: true, locationRelativeTo: null,
 			defaultCloseOperation: EXIT_ON_CLOSE) {
 		borderLayout(vgap: 3)
 		
-		panel(constraints: BorderLayout.CENTER,
+		panel(constraints: BorderLayout.NORTH,
 				border: compoundBorder([emptyBorder(10), titledBorder('Enter your address:')])) {
 			tableLayout {
 				tr {
@@ -51,10 +51,14 @@ swingBuilder.edt {  // edt method makes sure UI is build on Event Dispatch Threa
 			
 		}
 		
-		panel(constraints: BorderLayout.SOUTH) {
+		panel(constraints: BorderLayout.CENTER) {
 			button text: 'Save', actionPerformed: {
-				println address
+				liste.text = address
 			}
+		}
+		
+		panel(constraints: BorderLayout.SOUTH) {
+			 textArea(id:'liste', columns: 33, rows: 20, editable:false)
 		}
 		
 		// Binding of textfield's to address object.

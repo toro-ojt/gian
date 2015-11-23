@@ -63,20 +63,7 @@ swingBuilder.edt {
 		{
 			comboBox( id: 'cbx', items:['Get City Forecast By ZIP', 'Get City Weather By ZIP', 'Get Weather Information'], actionPerformed:
 								{
-//									if(cbx.getSelectedIndex() == 1){
-//									JOptionPane.showMessageDialog(null , 'Get City Forecast By ZIP')
-//										
-//									}
-//									
-//									else if(cbx.getSelectedIndex() == 2)
-//									{
-//										JOptionPane.showMessageDialog(null , 'Get City Weather By ZIP')
-//									}
-//									
-//									else if(cbx.getSelectedIndex() == 3)
-//									{
-//										JOptionPane.showMessageDialog(null , 'Weather Info By ZIP')
-//									}
+								
 								
 								}
 								
@@ -111,34 +98,20 @@ swingBuilder.edt {
 								
 								def tryutil5 = new WeatherUtil().CityForecast(zip).forecast.date
 								def tryutil6 = new WeatherUtil().CityForecast(zip).forecast.weatherId
-//								def tryutil7 = new WeatherUtil().CityForecast(zip).forecast.description
-//								def tryutil8 = new WeatherUtil().CityForecast(zip).forecast.tempMorningLow
-//								def tryutil9 = new WeatherUtil().CityForecast(zip).forecast.tempDaytimeHigh
-//								def tryutil10 = new WeatherUtil().CityForecast(zip).forecast.probNightTime
-//								def tryutil11 = new WeatherUtil().CityForecast(zip).forecast.probDayTime
+								def tryutil7 = new WeatherUtil().CityForecast(zip).forecast.description
+								def tryutil8 = new WeatherUtil().CityForecast(zip).forecast.tempMorningLow
+								def tryutil9 = new WeatherUtil().CityForecast(zip).forecast.tempDayTime
+								def tryutil10 = new WeatherUtil().CityForecast(zip).forecast.probNightTime
+								def tryutil11 = new WeatherUtil().CityForecast(zip).forecast.probDayTime
 
 								
 								tryutil5.size().times
 								{
-									liste.text += "\n${tryutil5[it]}\n${tryutil6[it]}"
+									liste.text += "Success : $success\nResponse : $response\nState: $state\nCity: $city\nStation: $station\nDate: ${tryutil5[it]}\nWeather ID: ${tryutil6[it]}\nDescription: ${tryutil7[it]}\nTemperature Morning Low: ${tryutil8[it]}\nTemperature Daytime High: ${tryutil9[it]}\nProbability of Precipitation\nNightTime: ${tryutil10[it]}\nDaytime: ${tryutil11[it]}\n\n"
 								}
 							
-								
-
-//								def weatherID = tryutil.forecast.weatherId[i]
-//								def description = tryutil.forecast.weatherId[i]
-//								def tempmorning = tryutil.forecast.tempMorningLow[i]
-//								def probnightime = tryutil.forecast.probNightTime[i]
-//								def probdaytime = tryutil.forecast.probDayTime[i]
 							
-								
-								
-								
 							
-								
-								//liste.text = "Success : $success\nResponse : $response\nState: $state\nCity: $city\nStation: $station "//"Success : $success\nResponse : $response\nState: $state\nCity: $city\nStation: $station"
-
-									
 								
 								
 								}
@@ -178,17 +151,11 @@ swingBuilder.edt {
 									{
 										liste.text += "\n${tryutil4[it]}\n${tryutil3[it]}"  
 									}
-//									def weatherid = tryutil3.weatherId
-//									def descript = tryutil3.description
-//									
-//									liste.text = "$weatherid\nTrial: $descript"
-//																
-						
+
 									
 									
 								}
 
-//						liste.text = testvariable2.text
 		
 						}
 					}

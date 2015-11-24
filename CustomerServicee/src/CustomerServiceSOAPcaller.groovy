@@ -24,8 +24,12 @@ class CustomerServiceSOAPcaller {
 		def result = response.ListCustomerResponse.status.message
 		def fname = response.ListCustomerResponse.customerList.firstName
 		def lname = response.ListCustomerResponse.customerList.lastName
+		def email = response.ListCustomerResponse.customerList.email
+		def isregistered = response.ListCustomerResponse.customerList.isRegistered
+		def homeno = response.ListCustomerResponse.customerList.homePhoneNo
+		def workno = response.ListCustomerResponse.customerList.workPhoneNo
 		
-		println "Status: $result\nFirst Name: $fname\nLast Name: $lname"
+		println "Status: $result\nFirst Name: $fname\nLast Name: $lname\nEmail: $email\nIs Registered: $isregistered\nHome Number: $homeno\nWork Number: $workno"
 		
 		
 		

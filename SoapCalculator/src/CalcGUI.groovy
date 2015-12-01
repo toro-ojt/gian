@@ -22,7 +22,7 @@ class CalcGUI {
 		def swingBuilder = new SwingBuilder()
 		swingBuilder.edt {  // edt method makes sure UI is build on Event Dispatch Thread.
 			lookAndFeel 'nimbus'  // Simple change in look and feel.
-			frame(title: 'Geo IP', size: [300, 200],
+			frame(title: 'Calculator', size: [300, 200],
 			show: true, locationRelativeTo: null, id: 'MainFrame', defaultCloseOperation: JFrame.EXIT_ON_CLOSE) {
 				borderLayout(vgap: 5)
 				
